@@ -82,17 +82,17 @@
         </ul>
     </section>
 
-    <section class="slide page">
-        <h2 class="shout fs50" style="
-            text-align: left;
-            margin-left: 30px;
-            line-height: 120%; ">
+<!--    <section class="slide page">-->
+<!--        <h2 class="shout fs50" style="-->
+<!--            text-align: left;-->
+<!--            margin-left: 30px;-->
+<!--            line-height: 120%; ">-->
 
-<!--            Типовя задача техлида: <br>-->
-            <span style="">Строим эффективный <br>
-                         процесс работы с контрактом</span>
-        </h2>
-    </section>
+<!--&lt;!&ndash;            Типовя задача техлида: <br>&ndash;&gt;-->
+<!--            <span style="">Строим эффективный <br>-->
+<!--                         процесс работы с контрактом</span>-->
+<!--        </h2>-->
+<!--    </section>-->
 
     <section class="slide page">
         <h2>Аспекты эффективный техпроцесса в рамках работы с контрактами</h2>
@@ -131,8 +131,9 @@
         <h2>Disclaimer: обсуждаемые способы подходят</h2>
         <ul>
             <li><b>REST based:</b> полностью</li>
-            <li><b>Async API:</b> <i>частично</i></li>
+            <li><b>Async API (web:</b> <i>частично</i></li>
             <li><b>gRPC:</b> <i>частично</i></li>
+            <li><b>GraphQL:</b> <i>частично</i></li>
         </ul>
     </section>
 
@@ -165,6 +166,15 @@
 
     <section class="slide page">
         <h2 class="shout fs60">У кого <mark>Contract</mark> First?</h2>
+    </section>
+
+    <section class="slide page">
+        <h2 class="">История контрактов в Вебпрактик</h2>
+        <ul>
+            <li>Мы больше 13 лет работаем по CodeFirst подходу</li>
+            <li>Мы прокачали его от и до, выжали максимум возможностей, разработали свои open source библиотеки</li>
+            <li>В рамках развития начали переходить на ContractFirst т.к. он на некоторых проектах дает больше простора для автоматизации и AI</li>
+        </ul>
     </section>
 
     <section class="slide section">
@@ -321,9 +331,7 @@
             </li>
             <li class="next">На выходе серьезно сокращаем объем работы <br>и ускоряем работу фронтов</li>
         </ul>
-
     </section>
-
 
     <section class="slide page">
         <img class="cover" width="700" src="images/back-front-code-first-4.svg" alt="">
@@ -338,27 +346,15 @@
     <section class="slide  page">
         <h2>Kubb</h2>
         <ul>
-            <li>Генерирует клиент на TS в виде:
-                <ul>
-                    <li>Axios</li>
-                    <li>ReactQuery</li>
-                    <li>SWR</li>
-                </ul>
-            </li>
-            <li class="next">Использует MSW для mock сервера</li>
-            <li class="next">Использует faker для mock data</li>
-            <li class="next">Генерирует ZOD валидацию по схеме</li>
+            <li>Генерирует кучу готового: типы, клиенты, моки, валидации</li>
+            <li>Готовый инструмент из коробки который подойдет любому фронтенду</li>
+            <li>Не требует допилов</li>
+            <li>Бесплатная генерация большого количества кода только благодаря тому что есть контракт</li>
         </ul>
     </section>
 
     <section class="slide  page">
-        <h2>Kubb + MCP</h2>
-        <p><b><a href="https://kubb.dev/plugins/plugin-mcp/">@kubb/plugin-mcp</a></b></p>
-        <h2>Зачем ? ✋</h2>
-    </section>
-
-    <section class="slide  page">
-        <h2>Static codegen vs AI codegen</h2>
+        <h2>Статичная кодогенерация vs AI кодогенерация</h2>
         <ul>
             <li class="next">AI codegen не детерминирован</li>
             <li class="next">На статическую кодогенерацию не нужно делать ревью</li>
@@ -437,8 +433,25 @@
         </ul>
     </section>
 
+    <section class="slide page section">
+        <h2 class=" ">Контракт = Продукт</h2>
+        <ul>
+            <li>Продукт должен быть удобен для потребителя</li>
+            <li class="next">Если у вас взаимодействие Back/Front, то потребители это фронты</li>
+            <li class="next">Контракт должен быть клиенто-центричен</li>
+        </ul>
+    </section>
+
     <section class="slide page-green-full">
         <img class="cover" width="700" src="images/contract-first.svg" alt="">
+    </section>
+
+    <section class="slide page">
+        <h2>Cокращаем количество работы по генерации контракта</h2>
+        <ol>
+            <li>TypeScpec: сокращенный OpenAPI</li>
+            <li>AI</li>
+        </ol>
     </section>
 
     <section class="slide page clear" style="background: #f5f5f5;">
@@ -457,7 +470,9 @@
     <section class="slide page">
         <h2>AI генерация контракта</h2>
         <ol>
-            <li>Сильно ускоряет</li>
+            <li class="next">Даем ему любое ТЗ в читаемом виде</li>
+            <li class="next">Получаем отличный бойлерплейт</li>
+            <li class="next">Лучше запускать агентов в редакторе, т.к. сможем править сразу многофайловую структуру</li>
             <li class="next">SpecDrivenDevelopment</li>
         </ol>
     </section>
@@ -478,14 +493,6 @@
     </section>
 
 
-    <section class="slide page section">
-        <h2 class=" ">Контракт = Продукт</h2>
-        <ul>
-            <li>Продукт должен быть удобен для потребителя</li>
-            <li class="next">Если у вас взаимодействие Back/Front, то потребители это фронты</li>
-            <li class="next">Контракт должен быть клиенто-центричен</li>
-        </ul>
-    </section>
 
 
     <section class="slide page section">
@@ -601,8 +608,8 @@
     </section>
 
     <section class="slide page">
-        <h2>Что делать если нет машиночитаемого контракта</h2>
-        <ul>
+        <h2>Что делать, если нет машиночитаемого контракта</h2>
+        <ul style="font-size: 21px;">
             <li>Вне зависимости от выбранного подхода: <br> сначала попробовать сгенерировать контракт из кода</li>
             <li>Для
                 <mark>Code</mark> First подхода допилить аннотации</li>
@@ -613,6 +620,15 @@
                     <li>подключить старые сервисы в новых сгенерированных маршрутах</li>
                 </ul>
             </li>
+        </ul>
+    </section>
+
+    <section class="slide page">
+        <h2>MCP для тестировщика и аналитика</h2>
+        <ul>
+            <li>Подключаем к Claude MCP сваггера</li>
+            <li>Генерируем и управляем тестовыми данными</li>
+            <li>Делаем цепочки запросов</li>
         </ul>
     </section>
 
