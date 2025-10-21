@@ -2,7 +2,7 @@
 <!--suppress HtmlRequiredAltAttribute -->
 <html lang="en">
 <head>
-    <title>Contract First vs Code First</title>
+    <title>Contract-First vs Code-First подход при проектировании процессов</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="node_modules/@shower/ribbon/styles/styles.css">
@@ -26,16 +26,16 @@
 <body class="shower list">
 
     <header class="caption">
-        <h1>Contract First vs Code First</h1>
+        <h1>Contract-First vs Code-First подход при проектировании процессов</h1>
         <p>Иван Поддубный, CTO Вебпрактик</p>
     </header>
 
     <section class="slide clear main-page face">
-        <h2 class="fs70" style="margin-top: 20px; font-size: 48px; ">Contract First <br>&nbsp;vs Code First</h2>
+<!--        <h2 class="fs70" style="margin-top: 20px; font-size: 48px; ">Contract First <br>&nbsp;vs Code First</h2>-->
 
-        <br>
-        <div class="author" style="font-size: 36px; font-weight: bold;">Иван Поддубный</div>
-        <div class="company" style="font-size: 30px;">CTO Webpractik</div>
+<!--        <br>-->
+<!--        <div class="author" style="font-size: 36px; font-weight: bold;">Иван Поддубный</div>-->
+<!--        <div class="company" style="font-size: 30px;">CTO Webpractik</div>-->
 
     </section>
 
@@ -89,7 +89,7 @@
             line-height: 120%; ">
 
 <!--            Типовя задача техлида: <br>-->
-            <span style="color: #4b86c2">Строим эффективный <br>
+            <span style="">Строим эффективный <br>
                          процесс работы с контрактом</span>
         </h2>
     </section>
@@ -331,6 +331,49 @@
     </section>
 
 
+    <section class="slide  clear">
+        <img class="cover" src="images/kubb.png" alt="">
+    </section>
+
+    <section class="slide  page">
+        <h2>Kubb</h2>
+        <ul>
+            <li>Генерирует клиент на TS в виде:
+                <ul>
+                    <li>Axios</li>
+                    <li>ReactQuery</li>
+                    <li>SWR</li>
+                </ul>
+            </li>
+            <li class="next">Использует MSW для mock сервера</li>
+            <li class="next">Использует faker для mock data</li>
+            <li class="next">Генерирует ZOD валидацию по схеме</li>
+        </ul>
+    </section>
+
+    <section class="slide  page">
+        <h2>Kubb + MCP</h2>
+        <p><b><a href="https://kubb.dev/plugins/plugin-mcp/">@kubb/plugin-mcp</a></b></p>
+        <h2>Зачем ? ✋</h2>
+    </section>
+
+    <section class="slide  page">
+        <h2>Static codegen vs AI codegen</h2>
+        <ul>
+            <li class="next">AI codegen не детерминирован</li>
+            <li class="next">На статическую кодогенерацию не нужно делать ревью</li>
+        </ul>
+    </section>
+
+    <section class="slide  page">
+        <h2>Выводы по кодегену:</h2>
+        <ul>
+            <li class="next">Все что можем сгенерировать статично &mdash; генерируем статично</li>
+            <li class="next">AI генерирует бизнес логику и тесты</li>
+        </ul>
+    </section>
+
+
     <section class="slide page">
         <h2 class="shout" style="font-size: 50px;">Стабильность и блокеры</h2>
 
@@ -367,31 +410,81 @@
             --spotlight-left: -9px;
             --spotlight-top: 142px;
         "></div>
+    </section>
 
 
+    <section class="slide page">
+        <h2 class="">Code First: неожиданные изменения</h2>
+        <ul>
+            <li>Решение: выделенный репозиторий для контракта</li>
+            <li>Аналитик может review делать и контролировать изменения API</li>
+        </ul>
     </section>
 
     <section class="slide section">
         <h2 class="shout">
             <mark>Contract</mark> First</h2>
-
     </section>
 
     <section class="slide page">
         <h2>Как подходим</h2>
         <ul>
             <li>Учим аналитика писать спеку в Open/Async API-формате</li>
-            <li>Или пишем и согласовываем спецификацию руками разработчиков
-                <span class="next"><img src="images/githubn.png" width="30" alt=""  style="vertical-align: middle;"> <span style="vertical-align: middle;"><b>microsoft/typespec</b>: ~5K звезд</span></span>
-            </li>
+            <li>Или пишем и согласовываем спецификацию руками разработчиков</li>
             <li class="next">Кладем спецификацию в отдельный репозиторий</li>
             <li class="next">Все изменения через MergeRequest с review</li>
+            <li class="next">Аналитик может делать ревью!</li>
         </ul>
     </section>
 
-    <section class="slide page">
+    <section class="slide page-green-full">
         <img class="cover" width="700" src="images/contract-first.svg" alt="">
+    </section>
 
+    <section class="slide page clear" style="background: #f5f5f5;">
+        <img class="cover" src="images/typespec-intro.png" alt="">
+    </section>
+
+    <section class="slide page-black">
+        <img class="" src="images/typespec.svg" alt="" width="500" style="
+            float: left
+        ">
+        <img class="" src="images/typespec-openapi.svg" width="200" alt="" style="
+            float: left
+        ">
+    </section>
+
+    <section class="slide page">
+        <h2>AI генерация контракта</h2>
+        <ol>
+            <li>Сильно ускоряет</li>
+            <li class="next">SpecDrivenDevelopment</li>
+        </ol>
+    </section>
+
+    <section class="slide page-green-full">
+        <img class="cover" width="700" src="images/contract-first.svg" alt="">
+        <i style="
+            position: absolute;
+            top: 350px;
+            left: 185px;
+            color: #000;
+            font-size: 13px !important;
+            font-weight: bold;
+            background: var(--color-red);
+            padding: 5px 10px;
+            border-radius: 10px;
+        ">AI boost</i>
+    </section>
+
+
+    <section class="slide page section">
+        <h2 class=" ">Контракт = Продукт</h2>
+        <ul>
+            <li>Продукт должен быть удобен для потребителя</li>
+            <li class="next">Если у вас взаимодействие Back/Front, то потребители это фронты</li>
+            <li class="next">Контракт должен быть клиенто-центричен</li>
+        </ul>
     </section>
 
 
@@ -446,6 +539,19 @@
         <img src="images/rate-my-api.png" style="width: 100%; position: absolute; bottom: -40px; left: 0; right: 0;" alt="">
     </section>
 
+    <section class="slide clear page-black">
+        <img class="cover" src="images/oas-diff.png" alt="">
+    </section>
+
+    <section class="slide page">
+        <h2 style="line-height: 140%; position: relative;z-index: 2;">Проверка качества контракта:
+            <mark>AI</mark></h2>
+        <ul>
+            <li>Внедряем промпт проверки в гитлаб небольшим скриптом</li>
+            <li>Делаем в виде advisory (не блокирующий merge)</li>
+        </ul>
+    </section>
+
     <section class="slide page">
         <h2>Проверка качества контракта</h2>
         <p style="text-align: center;"><img src="images/contract-contract-linter.svg" width="750" alt=""></p>
@@ -476,6 +582,14 @@
     </section>
 
     <section class="slide page">
+        <h2>Контрактное тестирование:</h2>
+        <ul>
+            <li>Dredd + LLM</li>
+            <li>Prism + Schemathesis + LLM</li>
+        </ul>
+    </section>
+
+    <section class="slide page">
         <h2>Инструменты визуального тестирования: SwaggerUI</h2>
         <img src="images/swagger-ui.png" style="width: 700px;" alt="">
     </section>
@@ -486,18 +600,102 @@
         <img src="images/elements.png" style="width: 800px; position: absolute; right: 0; top: 0;" alt="">
     </section>
 
+    <section class="slide page">
+        <h2>Что делать если нет машиночитаемого контракта</h2>
+        <ul>
+            <li>Вне зависимости от выбранного подхода: <br> сначала попробовать сгенерировать контракт из кода</li>
+            <li>Для
+                <mark>Code</mark> First подхода допилить аннотации</li>
+            <li>Для
+                <mark>Contract</mark> First:
+                <ul>
+                    <li>допилить до чистого вида в исходном yaml и подключить генератор</li>
+                    <li>подключить старые сервисы в новых сгенерированных маршрутах</li>
+                </ul>
+            </li>
+        </ul>
+    </section>
+
     <section class="slide page section">
         <h2 class="shout">Выводы</h2>
     </section>
+
+<!-- Todo раскрасить -->
+    <section class="slide page ">
+        <h2 class="">Проблемы при работе с контрактами</h2>
+        <table style="font-size: 16px;">
+            <thead>
+                <tr>
+                    <th>Кейс</th>
+                    <th>CodeFirst&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                    <th>ContractFirst</th>
+                </tr>
+            </thead>
+            <tbody>
+            <tr class="next">
+                <td>Проблема неактуальной документации</td>
+                <td>Решено</td>
+                <td>Решено</td>
+            </tr>
+            <tr class="next">
+                <td>Проблема недостаточной полноты описания контрактов</td>
+                <td>Частично</td>
+                <td>Решено</td>
+            </tr>
+            <tr class="next">
+                <td>Потери эффективности на согласовании контрактов</td>
+                <td>Частично</td>
+                <td>Решено</td>
+            </tr>
+            <tr class="next">
+                <td>Поддержка качества контрактов <br>(соблюдение стандартов и лучших практик)</td>
+                <td>Частично</td>
+                <td>Решено</td>
+            </tr>
+            <tr class="next">
+                <td>Блокеры процессов из-за задержки поставки контракта</td>
+                <td>Решено</td>
+                <td>Решено</td>
+            </tr>
+            <tr class="next">
+                <td>Блокеры процессов из-за зависимости клиентов и QA от тестовых контуров</td>
+                <td>Решено</td>
+                <td>Решено</td>
+            </tr>
+            <tr class="next">
+                <td>Несоответствие реализации контрактам</td>
+                <td>Решено</td>
+                <td>Решено</td>
+            </tr>
+            <tr class="next">
+                <td>Проблемы тестирования контрактов</td>
+                <td>Частично</td>
+                <td>Решено</td>
+            </tr>
+            <tr class="next">
+                <td><b>Возможности автоматизации</b></td>
+                <td>Средние</td>
+                <td>Большие</td>
+            </tr>
+            <tr class="next">
+                <td><b>AI Driven</b></td>
+                <td>Меньше</td>
+                <td>Больше</td>
+            </tr>
+            </tbody>
+        </table>
+    </section>
+
 
     <section class="slide page">
         <h2>Выводы: <mark>Code</mark> First</h2>
         <ol style="font-size: 22px;">
             <li>Code First может быть не менее контракто-центричен, чем ContractFirst</li>
             <li>Code First немного отстает с появлением контракта в рамках процесса, но не критично</li>
-            <li>Качество контракта может в CodeFirst проседать по сравнению с ContractFirst, но это решается регламентом и линтингом</li>
+            <li>Качество контракта может в CodeFirst проседать по сравнению с ContractFirst, но это решается регламентом и статической проверкой качества</li>
             <li>С CodeFirst проще стартовать, и его поддерживают по умолчанию все фреймворки</li>
             <li>Подход по-прежнему актуален, востребован, инструменты развиваются</li>
+            <li>Аналитик поставляет требования не в виде контракта, и его работа слабо поддается автоматизации</li>
         </ol>
     </section>
 
@@ -508,6 +706,7 @@
             <li>Подход больше подходит для больших команд и проектов</li>
             <li>Возможность обнаруживать проблемы на более ранних этапах</li>
             <li>Контракт можно поручать аналитикам (как постановщикам задачи) или фронтам (как будущим пользователям)</li>
+            <li>Ограничения: на старте проработка кодогенерации бекенда может отнять доп время если нет наработок</li>
         </ol>
     </section>
 
@@ -523,13 +722,20 @@
         <h2>Полезные ссылки</h2>
         <ul>
             <li><a href="https://kubb.dev/">Kubb</a> &mdash; швейцарский нож для автоматизации frontend</li>
-            <li><a href="https://github.com/stoplightio/prism">Prism</a> &mdash; mock by OpenApi generator</li>
-            <li><a href="https://github.com/stoplightio/spectral">Spectral</a> &mdash; api styleguide</li>
+            <li><a href="https://github.com/stoplightio/prism">Prism</a>, <a href="https://mswjs.io/">MSW</a> &mdash; mock сервера</li>
+            <li><a href="https://github.com/stoplightio/spectral">Spectral</a>, <a href="https://ratemyopenapi.com/">RateMyAPI</a> &mdash; api styleguide, линтер, визуальные отчеты</li>
+            <li><a href="https://github.com/oasdiff/oasdiff">oasdiff</a> &mdash; контроль breaking changes
+            </li>
             <li><a href="https://github.com/stoplightio/elements">Elements</a> &mdash; альтернатива SwaggerUI</li>
-            <li><a href="https://ratemyopenapi.com/">RateMyAPI</a> &mdash; линтер + визуальные отчеты</li>
-            <li><a href="https://dredd.org/en/latest/">Dredd</a> &mdash; контрактные тесты на основе API</li>
+            <li><a href="https://dredd.org/en/latest/">Dredd</a>, <a href="https://github.com/schemathesis/schemathesis">Schemathesis</a> &mdash; контрактные тесты на основе API</li>
         </ul>
+    </section>
 
+    <section class="slide page-final">
+        <h2>Спасибо! Ваши вопросы!</h2>
+        <ul>
+            <li>Иван Поддубный <br>CTO Вебпрактик</li>
+        </ul>
     </section>
 
 <!--    <section class="slide clear">-->

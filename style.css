@@ -155,13 +155,22 @@
 	width: 100px;
 }
 
-.page {
-	/*background: url("./images/page.svg") border-box  #fff;*/
+.page-final {
+	background: url("./images/bg-default.png") border-box #fff;
 	background-size: cover;
 }
 
+.page {
+	/*background: url("./images/bg-default.png") border-box #fff;*/
+	background-size: cover;
+}
+
+.page.clear {
+	background: #fff !important;
+}
+
 .face {
-	/*background: url("./images/face.svg") border-box;*/
+	background: url("./images/face.svg") border-box;
 	background-size: cover;
 }
 
