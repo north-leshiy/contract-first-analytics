@@ -161,7 +161,7 @@
 }
 
 .page {
-	/*background: url("./images/bg-default.png") border-box #fff;*/
+	background: url("./images/bg-default.png") border-box #fff;
 	background-size: cover;
 }
 
@@ -190,4 +190,11 @@
 	width: auto !important;
 	text-align: left !important;
 	padding-left: 50px;
+}
+
+.success {
+	color: mediumseagreen;
+}
+.warn {
+	color: orange;
 }
